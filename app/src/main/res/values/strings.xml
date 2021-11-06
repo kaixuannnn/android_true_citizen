@@ -2,4 +2,6 @@
     <string name="app_name">True Citizen</string>
     <string name="false_button_text">False</string>
     <string name="true_button_text">True</string>
+    <string name="next_button_txt">Next</string>
+    <string name="prev_button_text">Prev</string>
 </resources>
