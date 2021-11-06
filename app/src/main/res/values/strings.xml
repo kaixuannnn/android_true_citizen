@@ -4,4 +4,6 @@
     <string name="true_button_text">True</string>
     <string name="next_button_txt">Next</string>
     <string name="prev_button_text">Prev</string>
+    <string name="placeholder">Question goes here</string>
+    <string name="image_description">A droid icon image</string>
 </resources>
