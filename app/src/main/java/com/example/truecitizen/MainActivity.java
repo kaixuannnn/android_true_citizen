@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.truecitizen.databinding.ActivityMainBinding;
 import com.example.truecitizen.model.Question;
 
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
+    private int currentQuestionIndex = 0;
     private Question[] questionBank = new Question[]{
             //create/instantiate objects
             new Question(R.string.question_amendments, false), //correct: 27
@@ -29,5 +31,14 @@ public class MainActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
 
         binding.questionTextView.setText(questionBank[0].getAnswerResId());
+
+        binding.nextButton.setOnClickListener(v -> {
+            currentQuestionIndex = (currentQuestionIndex + 1) % questionBank.length;
+            updateQuestion();
+        });
+    }
+
+    private void updateQuestion() {
+        binding.questionTextView.setText(questionBank[currentQuestionIndex].getAnswerResId());
     }
 }
